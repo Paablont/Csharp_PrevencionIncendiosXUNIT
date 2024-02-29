@@ -8,15 +8,15 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Label x:Name="txtTitulo" Content="Calculadora CBI" HorizontalAlignment="Center" Margin="0,34,0,0" VerticalAlignment="Top" Height="62" Width="232" FontSize="30"/>
-        <TextBox x:Name="tboxTemperatura" HorizontalAlignment="Left" Margin="208,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116" Height="41" FontSize="20"/>
-        <TextBox x:Name="tboxHumedad" HorizontalAlignment="Left" Margin="506,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116" Height="41" FontSize="20"/>
+        <TextBox x:Name="tboxTemperatura" Text="{Binding Temperatura}" HorizontalAlignment="Left" Margin="208,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116" Height="41" FontSize="20"/>
+        <TextBox x:Name="tboxHumedad" Text="{Binding HumedadRelativa}" HorizontalAlignment="Left" Margin="506,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116" Height="41" FontSize="20"/>
         <Label x:Name="txtTemp" Content="TEMPERATURA(Cº)" HorizontalAlignment="Left" Margin="31,141,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
-        <Label x:Name="txtHumedad" Content="HUMEDAD (%)" HorizontalAlignment="Left" Margin="365,141,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
-        <Button Content="Calcular CBI" HorizontalAlignment="Left" Margin="338,217,0,0" VerticalAlignment="Top" Height="45" Width="100" FontSize="18"/>
+        <Label x:Name="txtHum" Content="HUMEDAD (%)" HorizontalAlignment="Left" Margin="365,141,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
+        <Button Content="Calcular CBI" Click="btnCalcular" HorizontalAlignment="Left" Margin="338,217,0,0" VerticalAlignment="Top" Height="45" Width="100" FontSize="18"/>
         <Label x:Name="txtCBI" Content="INDICE DE QUEMA DE CHANDLER (CBI)" HorizontalAlignment="Left" Margin="31,318,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
-        <Image Margin="506,267,38,31" Source="/Imagenes/CBI.png" Stretch="Fill"/>
         <Label x:Name="txtCBINum" Content="" HorizontalAlignment="Left" Margin="418,318,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <Label x:Name="txtCBINum_Copiar" Content="------------" HorizontalAlignment="Left" Margin="375,328,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label x:Name="txtCBILINEAS" Content="------------" HorizontalAlignment="Left" Margin="375,328,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Image x:Name="txtImg" HorizontalAlignment="Left" Height="131" Margin="526,283,0,0" VerticalAlignment="Top" Width="235" Source="/Imagenes/CBI.png"/>
 
     </Grid>
 </Window>
