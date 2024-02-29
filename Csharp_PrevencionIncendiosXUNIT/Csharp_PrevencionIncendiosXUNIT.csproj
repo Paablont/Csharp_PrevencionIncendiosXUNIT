@@ -8,4 +8,12 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="View\CBI.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="View\CBI.png" />
+  </ItemGroup>
+
 </Project>

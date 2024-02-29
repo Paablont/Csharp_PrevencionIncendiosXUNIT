@@ -1,5 +1,4 @@
 ﻿using Csharp_PrevencionIncendiosXUNIT.Model;
-using Csharp_PrevencionIncendiosXUNIT.ViewModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -18,23 +17,25 @@ namespace Csharp_PrevencionIncendiosXUNIT
     /// </summary>
     public partial class MainWindow : Window
     {
-        private CalculadoraModelView calcu = new CalculadoraModelView();
+        CalculadoraCBI calc = new CalculadoraCBI();
         private double resultado;
         
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = calcu;
+            DataContext = calc;
+            
         }
         private void btnCalcular(object sender,RoutedEventArgs e)
         {
             CalculadoraCBI c = new CalculadoraCBI
             {
-                Temperatura = calcu.Temperatura,
-                HumedadRelativa = calcu.HumedadRelativa,
+                Temperatura = calc.Temperatura,
+                HumedadRelativa = calc.HumedadRelativa,
             };
             resultado = c.CalcularCBI(c.Temperatura, c.HumedadRelativa);
-            txtCBINum.Content = resultado.ToString();
+            //N2 es un formato de ToString para que solo muestre 2 decimales
+            txtCBINum.Content = resultado.ToString("N2");
         }
     }
 }

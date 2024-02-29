@@ -14,9 +14,9 @@
         <Label x:Name="txtHum" Content="HUMEDAD (%)" HorizontalAlignment="Left" Margin="365,141,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
         <Button Content="Calcular CBI" Click="btnCalcular" HorizontalAlignment="Left" Margin="338,217,0,0" VerticalAlignment="Top" Height="45" Width="100" FontSize="18"/>
         <Label x:Name="txtCBI" Content="INDICE DE QUEMA DE CHANDLER (CBI)" HorizontalAlignment="Left" Margin="31,318,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
-        <Label x:Name="txtCBINum" Content="" HorizontalAlignment="Left" Margin="418,318,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label x:Name="txtCBINum" Content="" HorizontalAlignment="Left" Margin="400,318,0,0" VerticalAlignment="Top" FontSize="18"/>
         <Label x:Name="txtCBILINEAS" Content="------------" HorizontalAlignment="Left" Margin="375,328,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <Image x:Name="txtImg" HorizontalAlignment="Left" Height="131" Margin="526,283,0,0" VerticalAlignment="Top" Width="235" Source="/Imagenes/CBI.png"/>
+        <Image x:Name="txtImg" HorizontalAlignment="Left" Height="174" Margin="492,249,0,0" VerticalAlignment="Top" Width="277" Source="/View/CBI.png"/>
 
     </Grid>
 </Window>
