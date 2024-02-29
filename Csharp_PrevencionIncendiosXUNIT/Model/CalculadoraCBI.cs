@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Csharp_PrevencionIncendiosXUNIT.Model
 {
-    internal class CalculadoraCBI
+    public class CalculadoraCBI
     {
         #region ATRIBUTOS
         public event PropertyChangedEventHandler? PropertyChanged;
