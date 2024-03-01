@@ -27,6 +27,7 @@ namespace Csharp_PrevencionIncendiosXUNIT
         }
         private void btnCalcular(object sender, RoutedEventArgs e)
         {
+            
             temperatura = calc.Temperatura;
             humedadRelativa = calc.HumedadRelativa;
             if (comprobarHumedad(humedadRelativa))

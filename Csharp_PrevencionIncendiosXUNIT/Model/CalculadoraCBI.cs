@@ -8,7 +8,7 @@ using System.Windows;
 
 namespace Csharp_PrevencionIncendiosXUNIT.Model
 {
-    public class CalculadoraCBI
+    public class CalculadoraCBI : INotifyPropertyChanged, IDataErrorInfo
     {
         #region ATRIBUTOS
         public event PropertyChangedEventHandler? PropertyChanged;
@@ -35,6 +35,10 @@ namespace Csharp_PrevencionIncendiosXUNIT.Model
                 OnPropertyChange("HumedadRelativa");
             }
         }
+
+        public string Error => throw new NotImplementedException();
+
+        public string this[string columnName] => throw new NotImplementedException();
         #endregion
 
         //Método que se encarga de actualizar las propiedades en cada cambio
@@ -53,6 +57,7 @@ namespace Csharp_PrevencionIncendiosXUNIT.Model
             double segundoParentesis = 124 * Math.Pow(10, -0.0142 * humRel);
 
             double cbi = (primerParentesis * segundoParentesis) / 60;
+
             return (int)Math.Round(cbi);
 
         }
