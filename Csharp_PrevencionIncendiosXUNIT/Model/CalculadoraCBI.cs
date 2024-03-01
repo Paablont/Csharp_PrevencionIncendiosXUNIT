@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Csharp_PrevencionIncendiosXUNIT.Model
 {
@@ -42,22 +43,28 @@ namespace Csharp_PrevencionIncendiosXUNIT.Model
             if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public double CalcularCBI(double temperatura, double humedadRelativa)
+        public static int CalcularCBI(double temp, double humRel)
         {
             // Convertir la temperatura a °F
-            double temperaturaFahrenheit = (temperatura * 9 / 5) + 32;
+            double temperaturaFahrenheit = convertirTemperatura(temp);
 
-            // Calcular el primer paréntesis
-            double primerParentesis = (110 - 1.373 * humedadRelativa) - 0.54 * (10.20 - temperaturaFahrenheit);
+            double primerParentesis = (110 - 1.373 * humRel) - 0.54 * (10.20 - temperaturaFahrenheit);
 
-            // Calcular el segundo paréntesis
-            double segundoParentesis = 124 * Math.Pow(10, -0.0142 * humedadRelativa);
+            double segundoParentesis = 124 * Math.Pow(10, -0.0142 * humRel);
 
-            // Calcular el CBI
             double cbi = (primerParentesis * segundoParentesis) / 60;
+            return (int)Math.Round(cbi);
 
-            return cbi;
         }
+        private static double convertirTemperatura(double temperatura)
+        {
+            double fahrenheit = (temperatura * 9 / 5) + 32;
+            return fahrenheit;
+
+        }
+
     }
+
+
 
 }

@@ -12,30 +12,42 @@ using System.Windows.Shapes;
 
 namespace Csharp_PrevencionIncendiosXUNIT
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+  
     public partial class MainWindow : Window
     {
         CalculadoraCBI calc = new CalculadoraCBI();
-        private double resultado;
-        
+        private double temperatura, humedadRelativa;
+        private int resultado;
+
         public MainWindow()
         {
             InitializeComponent();
             DataContext = calc;
-            
+
         }
-        private void btnCalcular(object sender,RoutedEventArgs e)
+        private void btnCalcular(object sender, RoutedEventArgs e)
         {
-            CalculadoraCBI c = new CalculadoraCBI
+            temperatura = calc.Temperatura;
+            humedadRelativa = calc.HumedadRelativa;
+            if (comprobarHumedad(humedadRelativa))
             {
-                Temperatura = calc.Temperatura,
-                HumedadRelativa = calc.HumedadRelativa,
-            };
-            resultado = c.CalcularCBI(c.Temperatura, c.HumedadRelativa);
-            //N2 es un formato de ToString para que solo muestre 2 decimales
-            txtCBINum.Content = resultado.ToString("N2");
+                resultado = CalculadoraCBI.CalcularCBI(temperatura, humedadRelativa);
+                txtCBINum.Content = resultado.ToString();
+            }
+            else
+            {
+                MessageBox.Show("La humedad relativa no puede ser menor que 0");
+            }
+        }
+
+        public static bool comprobarHumedad(double humRel)
+        {
+            bool bien = false;
+            if (humRel > 0)
+            {
+                bien = true;
+            }
+            return bien;
         }
     }
 }
